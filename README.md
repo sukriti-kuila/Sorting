@@ -1,9 +1,9 @@
 # Sorting
 
 ## Bubble Sort 
-  Complexity : O(n^2)
-  Stable Algo : **YES**
-  Adaptive Algo : **By Default No but it can be made Adaptive**
+    Complexity : O(n^2)
+    Stable Algo : **YES**
+    Adaptive Algo : **By Default No but it can be made Adaptive**
 
 ## Stable Algorithm 
   A Stable Sort is one which preserves the original order of input set, where the comparison algorithm does not distinguish between two or more items. 
