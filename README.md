@@ -1,6 +1,6 @@
 # Sorting
 
-## Bubble Sort 
+## 1. Bubble Sort 
     Complexity : O(n^2)
     Stable Algo : YES
     Adaptive Algo : By Default No but it can be made Adaptive
