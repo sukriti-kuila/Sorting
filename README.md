@@ -9,6 +9,11 @@
     Complexity : O(n^2)
     Stable Algo : YES
     Adaptive Algo : YES
+   
+ ## 3. Selection Sort 
+    Complexity : O(n^2)
+    Stable Algo : NO
+    Adaptive Algo : NO
 
 ## Stable Algorithm 
   A Stable Sort is one which preserves the original order of input set, where the comparison algorithm does not distinguish between two or more items. 
