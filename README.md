@@ -12,7 +12,7 @@
    
  ## 3. Selection Sort 
     Complexity : O(n^2)
-    Stable Algo : NO
+    Stable Algo : NO But it can be stable
     Adaptive Algo : NO
 
 ## Stable Algorithm 
