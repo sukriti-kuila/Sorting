@@ -23,6 +23,10 @@
       Insertion Sort, Merge Sort and Bubble Sort 
     ### Non Example
       Quick Sort, Heap Sort
+## Adaptive Algorithm  
+    Already sorted data takes less time
+## In-Place Algorithm  
+    Doesn't take any extra space  
       
 ## Internal & External Algorithm    
     ### Internal : 
@@ -36,8 +40,7 @@
         ### Example : 
         Merge Sort
         
- ## Adaptive Algorithm  
-    Already sorted data takes less time
+ 
     
  ## Note
   1. Bubble sort, insertion sort, and selection sort are in-place sorting algorithms. Because only swapping of the element in the input array is required.
