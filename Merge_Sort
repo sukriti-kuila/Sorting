@@ -2,7 +2,7 @@ package recursion;
 
 import java.util.Arrays;
 
-public class _18_MergeSort {
+public class MergeSort {
 	static void merge (int [] arr, int start, int end, int mid)
 	{
 		
