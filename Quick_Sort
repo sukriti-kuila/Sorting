@@ -1,0 +1,58 @@
+package recursion;
+import java.util.Arrays;
+
+public class Quick_Sort {
+	static void swap (int arr[], int a , int b)
+	{
+		int temp = arr [a];
+		arr [a] = arr [b];
+		arr [b] = temp;
+	}
+	
+	public static int partition(int[] arr,int start, int end) 
+	{
+		int pivot = arr[start];
+		int count = 0;
+		for (int i=start+1; i<=end; i++)
+		{
+			if (arr[i]<=pivot)
+				count++;
+		}
+		int pivotIndex = start+count;
+		swap (arr, pivotIndex, start);
+		int i = start;
+		int j = end;
+		while (i<pivotIndex && j>pivotIndex)
+		{
+			while (arr[i]<=pivot) // we need to consider equality case 
+			{
+				i++;
+			}
+			while (arr[j]>pivot) // we can't consider the equality case here
+			{
+				j--;
+			}
+			if (i<pivotIndex && j>pivotIndex)
+			{
+				swap(arr,i,j);
+				i++;
+				j--;
+			}
+		}
+	return pivotIndex;
+}
+	static void QuickSort(int[] arr,int start,int end) {
+	if(start<end) {
+		int pivot=partition(arr,start,end);
+		QuickSort(arr,start,pivot-1);
+		QuickSort(arr,pivot+1,end);
+	}
+}
+	public static void main(String[] args) {
+
+		int[]arr= {4,8,1,1,6,8};
+		QuickSort(arr, 0,arr.length-1);
+		System.out.println(Arrays.toString(arr));
+
+	}
+}
