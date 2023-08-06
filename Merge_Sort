@@ -1,63 +1,44 @@
-package recursion;
-
-import java.util.Arrays;
-
-public class MergeSort {
-	static void merge (int [] arr, int start, int end, int mid)
-	{
-		
-		int leftSize = mid-start+1;
-		int rightSize = end-mid;
-		int left [] = new int [leftSize];
-		int right [] = new int [rightSize];
-		for (int i=0; i<leftSize; i++)
-		{
-			left [i] = arr [start+i];
-		}
-		for (int i=0; i<rightSize; i++)
-		{
-			right [i] = arr [mid+i+1];
-		}
-		int i=0, j=0, k=start;
-		while (i<leftSize && j<rightSize)
-		{
-			if (left[i]<right[j])
-			{
-				arr [k++] = left[i];
-				i++;
-			}
-			else
-			{
-				arr [k++] = right[j];
-				j++;
-			}
-		}
-		while (i<leftSize)
-		{
-			arr [k++] = left[i];
-			i++;
-		}
-		while (j<rightSize)
-		{
-			arr [k++] = right[j];
-			j++;
-		}
-		
-	}
-	static void sort (int [] arr, int start, int end)
-	{
-		if (start<end)
-		{
-			int mid = start+(end-start)/2;
-			sort(arr,start,mid);
-			sort(arr,mid+1,end);
-			merge(arr,start,end,mid);
-		}
-		
-	}
-	public static void main(String[] args) {
-		int [] arr = {12,- 15,3,7,4,1,-5};
-		sort(arr, 0, arr.length-1);
-		System.out.println(Arrays.toString(arr));
-	}
-}
+// leetcode 912
+public int[] sortArray(int[] nums) {
+        merge_sort(nums, 0, nums.length-1);
+        return nums;
+    } 
+    private void merge_sort(int [] nums, int l, int h)
+    {
+        if (l<h)
+        {
+            int mid = (l+h)/2;
+            merge_sort(nums,l,mid);
+            merge_sort(nums,mid+1,h);
+            merge(l,h,mid,nums);
+        }
+    }
+    private void merge(int low, int high, int mid, int [] arr)
+    {
+        ArrayList <Integer> extra = new ArrayList();
+        int left = low;
+        int right = mid+1;
+        while(left<=mid && right<=high)
+        {
+            if (arr[left]<=arr[right])
+            {
+                extra.add(arr[left]);
+                left++;
+            }
+            else
+            {
+                extra.add(arr[right]);
+                right++;
+            }
+        }
+        while (left<=mid)
+        {
+            extra.add(arr[left++]);
+        }
+        while (right<=high)
+        {
+            extra.add(arr[right++]);
+        }
+        for (int i=0; i<extra.size(); i++)
+            arr[low+i] = extra.get(i);
+    }
